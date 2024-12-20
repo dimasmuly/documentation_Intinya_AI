@@ -28,10 +28,11 @@
         <li><b>Flask:</b> Flask adalah web framework yang digunakan untuk membuat aplikasi web.</li>
         <li><b>Django:</b> Django adalah web framework yang digunakan untuk membuat aplikasi web.</li>
         <li><b>Pywebview:</b> Pywebview adalah tools yang digunakan untuk membuat aplikasi desktop.</li>
-        <li><b>OpenVino:</b></li>
+        <li><b>OpenVino:</b>Model untuk melakukan deteksi & tracking person berbasis pretained.</li>
         <li><b>HTML, CSS, Javascript:</b> HTML, CSS, dan Javascript digunakan untuk membuat tampilan web aplikasi.</li>
         <li><b>Sklearn:</b> Sklearn digunakan untuk melakukan training model.</li>
         <li><b>Tensorflow:</b> Tensorflow digunakan untuk melakukan training model.</li>
+        <li><b>Pytorch:</b>Pytorch digunakan untuk melakukan training model.</li>
         <li><b>Keras:</b> Keras digunakan untuk melakukan training model.</li>
       </ul>
     </span>
@@ -120,7 +121,7 @@
     <ol>
       <li>
         Clone the repository: 
-        <pre><code id="git-command">git clone https://github.com/hoyirul/face-recognition-models.git</code>
+        <pre><code id="git-command">https://github.com/mamuliady/intinya_ml_webserver.git</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
       </li>
       <li>
@@ -194,11 +195,15 @@
     <ol>
       <li>
         untuk menjalankan aplikasi, jalankan perintah: 
-        <pre><code id="git-command">python3 sites\test-customers.py</code>
+        <pre><code id="git-command">python -m venv venv</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-        <pre><code id="git-command">python3 sites\test-customers-counter.py</code>
+        <pre><code id="git-command">pip install -r requirements.txt</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-        <pre><code id="git-command">python3 sites\test-customers-counter-sqlite.py</code>
+        <pre><code id="git-command">python manage.py createsuperuser</code>
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+        <pre><code id="git-command">python manage.py tailwind start</code>
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+        <pre><code id="git-command">python manage.py runserver</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
       </li>
     </ol>
@@ -214,44 +219,78 @@
       <li>
         Berikut adalah contoh struktur folder project, tapi bisa di sesuaikan dengan kebutuhan:
         <pre><code>
-          your-project
-          ├── employees
-          │   ├── image1.jpg
-          │   ├── image2.jpg
-          │   └── image3.jpg
-          ├── face_recognition_models
-          │   ├── models
-          │   │   ├── dlib_face_recognition_resnet_model_v1.dat
-          │   │   ├── mmod_human_face_detector.dat
-          │   │   ├── shape_predictor_5_face_landmarks.dat
-          │   │   └── shape_predictor_68_face_landmarks.dat
-          ├── json
-          │   ├── employee-counter.json
-          │   └── employees.json
-          ├── main.py
+          project_root/
+          │
+          ├── Core/
+          │   ├── __init__.py
+          │   ├── admin.py
+          │   ├── api.py
+          │   ├── employee_controller.py
+          │   ├── forms.py
+          │   ├── migrations/
+          │   │   └── __init__.py
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tables.py
+          │   ├── urls.py
+          │   ├── utils.py
+          │   ├── views.py
+          │   └── previous_detections.json
+          │
+          ├── static/
+          │   ├── css/
+          │   │   ├── dashboard.css
+          │   │   ├── input.css
+          │   │   ├── output.css
+          │   │   ├── style.css
+          │   │   └── style-employee.css
+          │   └── js/
+          │       └── dashboard.js
+          │
+          ├── templates/
+          │   ├── admin-dashboard.html
+          │   ├── customer_visits/
+          │   │   ├── create_customer.html
+          │   │   ├── facial_analysis.html
+          │   │   └── customer_visits.html
+          │   ├── dashboard.html
+          │   ├── employee_attendance/
+          │   │   ├── employee_attendance.html
+          │   │   └── employee-dashboard.html
+          │   ├── index.html
+          │   ├── outlet_list.html
+          │   ├── register.html
+          │   ├── reset_password.html
+          │   └── password_reset_sent.html
+          │
+          ├── resources/
+          │   ├── required files/
+          │   │   ├── forgot_password.html
+          │   │   ├── index.html
+          │   │   ├── login.html
+          │   │   ├── register.html
+          │   │   ├── reset_password.html
+          │   │   └── style.css
+          │   └── doc/
+          │       └── readme.md
+          │
+          ├── theme/
+          │   ├── __init__.py
+          │   ├── static_src/
+          │   │   ├── .gitignore
+          │   │   ├── package.json
+          │   │   ├── postcss.config.js
+          │   │   └── src/
+          │   │       └── styles.css
+          │   └── static/
+          │       └── css/
+          │           └── dist/
+          │
+          ├── .gitignore
+          ├── README.md
           └── requirements.txt
         </code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-      </li>
-      <li>
-        Lalu jalankan perintah dibawah untuk memastikan aplikasi berjalan dengan baik: 
-        <pre><code id="git-command">python3 main.py</code>
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-      </li>
-      <li>
-        Setelah aplikasi berjalan dengan baik, jalankan perintah berikut untuk membuat executable file:
-        <pre><code>pyinstaller --noconsole --add-data "employees;employees" --add-data "json;json" --add-data "face_recognition_models;face_recognition_models" --specpath . main.py</code>
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-      </li>
-      <li>
-        Setelah perintah diatas dijalankan, maka akan terbuat folder <code>dist</code> dan <code>build</code>. Lalu buka folder <code>dist/main/</code> dan jalankan file <code>main.exe</code>
-      </li>
-      <li>
-        Jika aplikasi berjalan dengan baik, maka anda siap untuk membuat installer dari aplikasi ini dengan menggunakan <a href="https://jrsoftware.org/isdl.php">Inno Setup Compiler (US)</a>
-      </li>
-      <li>
-        Berikut adalah tutorial membuat installer dengan menggunakan Inno Setup Compiler (US):
-        <a href="https://drive.google.com/file/d/1CDLCb-82Ro_guHqt9YWxz2JXCmmvHFlw/view?usp=sharing" target="_blank">Tutorial Inno Setup Compiler (US)</a>
       </li>
     </ol>
 
