@@ -83,13 +83,17 @@
       <br>
     </ol>
 
-    <p id="gettingstarted">
+    <p>
       <b>Getting Started:</b> Untuk memulai menggunakan aplikasi ini, ikuti langkah-langkah berikut:
     </p>
 
     <div class="divider" style="width:24%; margin:30px 0;"></div>
 
-    <h1>Getting Started</h1>
+    <h1 id="gettingstarted">Getting Started</h1>
+    <h1 id="intinyaml">Intinya ML Webserver</h1>
+    <p>
+      Github: <a href="https://github.com/mamuliady/intinya_ml_webserver.git">Intinya ML Webserver</a>
+    </p>
 
     <h2>Silahkan dibaca dengan seksama!</h2>
 
@@ -97,11 +101,11 @@
       Sebelum menggunakan aplikasi ini, pastikan anda sudah membaca dokumentasi ini dengan seksama. Jika anda sudah membaca dokumentasi ini, anda siap untuk menggunakan aplikasi ini. Berikut adalah langkah-langkah untuk menggunakan aplikasi ini:
     </p>
 
-    <p id="installingapp"><b>Important:</b> Setelah baris ini adalah informasi penting.
+    <p><b>Important:</b> Setelah baris ini adalah informasi penting.
     </p>
 
 
-    <h2>Install the App</h2>
+    <h2 id="installingappintinyaml">Installing the app</h2>
 
     <p>
       <small style="color: red;">Pastikan anda sudah menginstall Python versi 3.9 atau lebih baru.</small> <br>
@@ -112,7 +116,7 @@
     <ol>
       <li>
         Clone the repository: 
-        <pre><code id="git-command">https://github.com/mamuliady/intinya_ml_webserver.git</code>
+        <pre><code id="git-command">git clone https://github.com/mamuliady/intinya_ml_webserver.git</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
       </li>
       <li>
@@ -158,54 +162,45 @@
       <br>
     </ol>
 
-    <h2 id="openingapp">Opening the app</h2>
-
     <p>
       Setelah anda menginstall aplikasi ini, anda siap untuk membuka aplikasi ini. Pastikan anda sudah menjalankan file <code>.ipynb</code> file untuk membuat models. Jika anda sudah menjalankan file tersebut, anda siap untuk membuka aplikasi ini. Berikut adalah langkah-langkah untuk membuka aplikasi ini:
     </p>
 
-    <h4>Desktop App</h4>
+    <h2 class="pb-4" id="startingappintinyaml">Starting the app</h2>
     <ol>
       <li>
-        Sebelum menjalankan aplikasi, diharapkan anda menjalankan perintah berikut:
-        <pre><code>python3 desktops/db/sqlite.py</code>
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-      </li>
-      <li>
-        Lalu jalankan perintah: 
-        <pre><code id="git-command">python3 desktops\test-customers.py</code>
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-        <pre><code id="git-command">python3 desktops\test-customers-counter.py</code>
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-        <pre><code id="git-command">python3 desktops\test-customers-counter-sqlite.py</code>
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
-      </li>
-    </ol>
-
-    <h4>Website App</h4>
-    <ol>
-      <li>
-        untuk menjalankan aplikasi, jalankan perintah: 
+        Create a virtual environment:
         <pre><code id="git-command">python -m venv venv</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+      </li>
+
+      <li>
+        Install requirements:
         <pre><code id="git-command">pip install -r requirements.txt</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+      </li>
+
+      <li>
+        Create a superuser:
         <pre><code id="git-command">python manage.py createsuperuser</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+      </li>
+
+      <li>
+        Run Tailwind:
         <pre><code id="git-command">python manage.py tailwind start</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+      </li>
+
+      <li>
+        Run the server:
         <pre><code id="git-command">python manage.py runserver</code>
         <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
       </li>
     </ol>
 
-    <h2 id="buildingapp">Building the app</h2>
 
-    <p>
-      Setelah anda membuka aplikasi ini, anda siap untuk menggunakan aplikasi ini. Berikut adalah langkah-langkah untuk membuat exeuatable file dari aplikasi ini, dan pastikan sudah menginstall <a href="https://jrsoftware.org/isdl.php">Inno Setup Compiler (US)</a>:
-    </p>
-
-    <h4>Setup Project</h4>
+    <h2 class="pb-4" id="folderstructureintinyaml">Folder Structure</h2>
     <ol>
       <li>
         Berikut adalah contoh struktur folder project, tapi bisa di sesuaikan dengan kebutuhan:
@@ -285,9 +280,175 @@
       </li>
     </ol>
 
-    <p id="basicfeatures">
-      <b>Basic Features:</b> Berikut adalah fitur-fitur dasar dari aplikasi ini.
+    <h1 id="intinyafacedetector" class="pt-4">Intinya Face Detector</h1>
+    <p>
+      Github: <a href="https://github.com/mamuliady/intinya_face_detector.git">Intinya Face Detector</a>
     </p>
+    <h2 id="installingappintinyafacedetector">Installing the app</h2>
+    <p>
+      <small style="color: red;">Pastikan anda sudah menginstall Python versi 3.9 atau lebih baru dan Node.js versi 18 atau lebih baru.</small> <br>
+      Install aplikasi ini dengan mengikuti langkah-langkah berikut:
+    </p>
+    <ol>
+      <li>
+        Jalankan perintah berikut untuk memulai proses instalasi otomatis:
+        <pre><code id="git-command">npm run init</code>
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+        Ini akan membuat lingkungan virtual, menginstal pip, dan mendownload semua dependensi Node. Sebagai alternatif, Anda dapat melakukan langkah-langkah ini secara manual:
+        <ol>
+          <li>
+            Install dependensi Node.js:
+            <pre><code id="git-command">npm install</code>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+          </li>
+          <li>
+            Install dependensi Python:
+            <pre><code id="git-command">pip install -r requirements.txt</code>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <h2 class="pb-2" id="startingintinyafacedetector">Starting the app</h2>
+    <span>Untuk menjalankan aplikasi:</span>
+    <pre><code id="git-command">npm run start</code>
+    <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+    <span>Untuk membangun executable. Output binary akan dihasilkan di direktori dist:</span>
+    <pre><code id="git-command">npm run build</code>
+    <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+    <span>Untuk memulai server pengembangan (hanya untuk menguji kode frontend):</span>
+    <pre><code id="git-command">npm run dev</code>
+    <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+
+    <h2 class="pb-4" id="folderstructureintinyafacedetector">Folder Structure</h2>
+    <ol>
+      <li>
+        Berikut adalah contoh struktur folder project, tapi bisa di sesuaikan dengan kebutuhan:
+        <pre><code>
+          project_root/
+          │
+          ├── model/
+          │   └── intel/
+          │       ├── person-detection-retail-0002/
+          │       │   └── FP16-INT8/
+          │       │       ├── person-detection-retail-0002.bin
+          │       │       └── person-detection-retail-0002.xml
+          │       ├── person-detection-retail-0013/
+          │       │   ├── FP16/
+          │       │   ├── FP16-INT8/
+          │       │   │   ├── person-detection-retail-0013.bin
+          │       │   │   └── person-detection-retail-0013.xml
+          │       │   └── FP32/
+          │       │       ├── person-detection-retail-0013.bin
+          │       │       └── person-detection-retail-0013.xml
+          │       ├── person-reidentification-retail-0031/
+          │       │   ├── FP16/
+          │       │   ├── FP16-INT8/
+          │       │   │   ├── person-reidentification-retail-0031.bin
+          │       │   │   └── person-reidentification-retail-0031.xml
+          │       │   └── FP32/
+          │       │       ├── person-reidentification-retail-0031.bin
+          │       │       └── person-reidentification-retail-0031.xml
+          │       ├── person-reidentification-retail-0248/
+          │       │   ├── FP16/
+          │       │   ├── FP16-INT8/
+          │       │   │   ├── person-reidentification-retail-0248.bin
+          │       │   │   └── person-reidentification-retail-0248.xml
+          │       │   └── FP32/
+          │       │       ├── person-reidentification-retail-0248.bin
+          │       │       └── person-reidentification-retail-0248.xml
+          │       └── person-reidentification-retail-0265/
+          │           ├── FP16/
+          │           ├── FP16-INT8/
+          │           │   ├── person-reidentification-retail-0265.bin
+          │           │   └── person-reidentification-retail-0265.xml
+          │           └── FP32/
+          │               ├── person-reidentification-retail-0265.bin
+          │               └── person-reidentification-retail-0265.xml
+          │
+          ├── src/
+          │   ├── api/
+          │   │   ├── analyze.py
+          │   │   ├── auth.py
+          │   │   ├── camera.py
+          │   │   └── schedule.py
+          │   ├── assets/
+          │   │   ├── logo.icns
+          │   │   ├── logo.ico
+          │   │   ├── logo.png
+          │   │   ├── open-sans-v17-latin_cyrillic-italic.woff
+          │   │   ├── open-sans-v17-latin_cyrillic-regular.woff
+          │   │   ├── profile.png
+          │   │   └── roboto-condensed-v18-latin_cyrillic-regular.woff
+          │   ├── components/
+          │   │   ├── Editor/
+          │   │   │   ├── Editor.scss
+          │   │   │   └── Editor.tsx
+          │   │   ├── Header/
+          │   │   │   ├── Header.scss
+          │   │   │   ├── Header.tsx
+          │   │   │   └── logo.png
+          │   │   └── Ticker/
+          │   │       ├── Ticker.scss
+          │   │       └── Ticker.tsx
+          │   ├── face_helper/
+          │   │   └── index.py
+          │   ├── Layout/
+          │   │   └── MainLayout.tsx
+          │   ├── libs/
+          │   │   ├── __init__.py
+          │   │   ├── argparser.py
+          │   │   ├── camera.py
+          │   │   ├── detectors.py
+          │   │   ├── interactive_detection.py
+          │   │   ├── kalman_filter.py
+          │   │   ├── tracker.py
+          │   │   └── utils.py
+          │   ├── Page/
+          │   │   ├── CameraList.tsx
+          │   │   ├── Dashboard.tsx
+          │   │   ├── FormCamera.tsx
+          │   │   ├── LiveStream.tsx
+          │   │   ├── Login.tsx
+          │   │   └── Testing.tsx
+          │   ├── styles/
+          │   │   └── fonts.scss
+          │   ├── utils/
+          │   │   └── constants.py
+          │   ├── index.html
+          │   ├── index.py
+          │   ├── index.scss
+          │   └── index.tsx
+          │
+          ├── templates/
+          │   └── index.html
+          │
+          ├── .gitignore
+          ├── .hintrc
+          ├── .postcssrc
+          ├── build-linux.spec
+          ├── build-macos.py
+          ├── build-windows.spec
+          ├── config.ini
+          ├── error.log
+          ├── LICENSE
+          ├── log_output.json
+          ├── package-lock.json
+          ├── package.json
+          ├── pallete
+          ├── README.md
+          ├── requirements_backup.txt
+          ├── requirements.txt
+          ├── sqlite.db
+          └── tailwind.config.js
+        </code>
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button></pre>
+      </li>
+    </ol>
+    <!-- <p id="basicfeatures">
+      <b>Basic Features:</b> Berikut adalah fitur-fitur dasar dari aplikasi ini.
+    </p> -->
 
 
     <div class="divider" style="width:24%; margin:30px 0;"></div>

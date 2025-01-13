@@ -30,7 +30,7 @@
   </div>
   <script>
     function copyToClipboard(button) {
-      const codeElement = document.getElementById('git-command');
+      const codeElement = button.previousElementSibling;
       const textArea = document.createElement('textarea');
       textArea.value = codeElement.textContent;
       document.body.appendChild(textArea);
